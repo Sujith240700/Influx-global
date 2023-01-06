@@ -44,7 +44,7 @@ def send_email(name,mailid,number,docname,docname1,message):
 
         #The mail addresses and password
         sender_address = 'server.mailbridge@gmail.com'
-        sender_pass = 'fwsujrovkmlxmfqm'
+        sender_pass = ''
         receiver_address = 'influxglobalsolutions@gmail.com'
         #Setup the MIME
         message = MIMEMultipart()
