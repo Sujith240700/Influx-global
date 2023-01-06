@@ -94,7 +94,7 @@ def send_email_user(name,mailid):
 
         #The mail addresses and password
         sender_address = 'server.mailbridge@gmail.com'
-        sender_pass = 'fwsujrovkmlxmfqm'
+        sender_pass = ''
         receiver_address = mailid
         #Setup the MIME
         message = MIMEMultipart()
