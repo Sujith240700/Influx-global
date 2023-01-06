@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link rel="icon" href="/static/images/logo.png" type="image/png">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Influx Global Solutions</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+      body {
+        font-family: "Ubuntu", sans-serif;
+      }
+.text-muted{
+  color: #fff2f2 !important;
+}
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        background-color: #fd5e53;
+        overflow-x: hidden;
+        transition: 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+        padding-top: 60px;
+        display: none;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #d6ffeb;
+      }
+      .carousel-caption {
+        position: absolute;
+        right: 15%;
+        bottom: 40%;
+        left: 15%;
+        color: #fff;
+        text-align: center;
+      }
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .opennav {
+        display: none !important;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .navbar {
+        background-color:white !important;
+        position: fixed;
+        padding: 10px;
+        max-height: 80px;
+        z-index: 10;
+        width: 100%;
+        border-bottom: 2px solid;
+      }
+      li.nav-item {
+        padding: 1rem;
+      }
+      .carousel-item {
+        background-blend-mode: lighten;
+        height: 100vh;
+      }
+      .socialico {
+    width: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    color: white;
+}
+      .carousel-caption {
+        bottom: 30%;
+        letter-spacing: 1.2px;
+        -webkit-text-stroke: 1.2px white;
+      }
+      mark {
+        background: none;
+        color: #21bf73;
+      }
+      .about-paragraph {
+        padding-top: 20px;
+        line-height: 30px;
+      }
+      .img-fluid {
+        max-width: 75%;
+        display: block;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .container,
+      .container-lg,
+      .container-md,
+      .container-sm {
+        max-width: 100vw;
+        padding-left:0;
+        padding-right:0 ;
+      }
+      .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff00;
+    background-clip: border-box;
+    border: none;
+    border-radius: 0;
+}
+      .about-paragraph {
+        font-size: 25px;
+        padding-top: 44px;
+        line-height: 40px;
+      }
+      .bg-svg {
+        transform: scale(2.5);
+        position: absolute;
+        z-index: -5;
+        height: 50%;
+        margin-left: -13vw;
+      }
+      .w3-card-4 {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
+        border-radius: 14px;
+        margin: auto;
+        margin-top: 25px;
+      }
+      .w3-card-4 img {
+        border-radius: 0 0 14px 14px;
+      }
+      .bgrowimg {
+        float: right;
+        z-index: -10;
+        height: 200%;
+        width: 74%;
+        display: block;
+        margin-top: 200px;
+        left: 25%;
+        padding-right: 5px;
+        position: absolute;
+        margin-right: 0;
+      }
+      .w3-center {
+        height: 50px;
+        text-align: center !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .w3-center p {
+        padding-top: 10px;
+      }
+      .w3-container,
+      .w3-panel {
+        padding: 0;
+      }
+      .row {
+        margin: auto;
+      }
+      .d-md-block h5 {
+        font-size: 30px;
+      }
+      .flx {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 25px;
+}
+.move{
+  height: 50vh;
+    margin-left: 50px;
+}
+.fx{
+  height: 50vh;    display: flex;
+        height: 50vh;
+        width:fit-content;
+        flex-direction: column;
+        justify-content: space-around;
+
+}
+      .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #21bf73;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      .form-control:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color: #21bf73;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(33 191 115 / 0.25);
+      }
+      label {
+        margin-top: 10px;
+      }
+      .ip {
+        height: 39px;
+        margin-top: 5px;
+      }
+      .btn-success {
+    color: #fff !important;
+    background-color: #21BF73;
+    border-color: #D0F2E1;
+}
+footer{
+  height: auto;
+  width:100vw;
+  background: #ff8a82;
+}
+.btn-check:focus+.btn-success, .btn-success:focus {
+    color: #fff;
+    background-color: #119c5a;
+    /* border-color: #146c43; */
+    box-shadow: 0 0 0 0.25rem rgba(60,153,110,.5);
+}
+.rw-align{
+
+  width: 90vw !important;
+
+              height: 350px;
+              left: 170px;
+
+              background: #ffffff;
+              box-shadow: 16px -20px 20px 20px rgb(37 33 33 / 2%), 0px 20px 15px 0px rgb(165 165 165 / 14%);
+              border-radius: 14px;
+              width: 100px;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: #157347;
+    border-color: #146c43;
+}
+      @media screen and (max-width: 768px) {
+        .move{
+  height: 50vh;
+    margin-left: 0px;
+}
+        .about-paragraph {
+          font-size: 15px;
+          padding-top: 20px !important;
+          line-height: 30px !important;
+        }
+        .w3-card-4 {
+          margin-top: 25px;
+          width: auto !important;
+        }
+      }
+      @media (min-width: 768px){
+.col-md-6 {
+    margin-top: 20px;
+    flex: 0 0 auto;
+    width: 50%;
+}}
+      @media screen and (max-width: 991px) {
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 10;
+          top: 0;
+          right: 0;
+          overflow-x: hidden;
+          transition: width 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+          padding-top: 60px;
+          display: block;
+        }
+        .opennav {
+          display: block !important;
+          font-size: 30px;
+          cursor: pointer;
+        }
+      }
+
+      @media screen and (max-height: 450px) {
+
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      @media (min-width: 768px){
+.col-md-6 {
+    margin-top: 20px;
+    flex: 0 0 auto;
+    width: 47%;
+}}
+      @media screen and (max-width: 450px) {
+         .fx{
+          height: fit-content;
+    justify-content: start !important;
+
+}
+        .rw-align{
+
+width: 90vw !important;
+
+            height: fit-content;}
+        .bgrowimg {
+          float: right;
+          z-index: -10;
+          height: 75%;
+          width: 74%;
+          display: block;
+          margin-top: 200px;
+          left: 25%;
+          padding-right: 5px;
+          position: absolute;
+          margin-right: 0;
+        }
+        .bg-svg {
+          transform: scale(1.1  );
+          position: absolute;
+          z-index: -5;
+          height: 50%;
+          margin-left: -50%;
+        }
+        .carousel-item {
+          background-size: 200% 100vh !important;
+        }
+        .carousel-caption {
+          bottom: 23%;
+        }
+        .mobile-align {
+
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: -20%;
+        }
+        .mg-tp{
+          margin-top: 25%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg  bg-light">
+      <a class="navbar-brand" href="/"><img style="    width: 42%;" src="/static/images/logo.png" alt="logo"></a>
+
+      <div
+        style="margin-left: auto; width: auto; margin-right: 0px !important"
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mr-auto" style="padding-left: 10px">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutus">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#OurServices">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Careers">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Contactus">Contact us</a>
+          </li>
+        </ul>
+      </div>
+      <span class="opennav" onclick="openNav()"
+        ><svg
+          width="39"
+          height="19"
+          viewBox="0 0 79 59"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M30 54.7857C30 53.668 30.3468 52.5961 30.9641 51.8058C31.5814 51.0154 32.4187 50.5714 33.2917 50.5714H75.7083C76.5813 50.5714 77.4186 51.0154 78.0359 51.8058C78.6532 52.5961 79 53.668 79 54.7857C79 55.9034 78.6532 56.9753 78.0359 57.7657C77.4186 58.556 76.5813 59 75.7083 59H33.2917C32.4187 59 31.5814 58.556 30.9641 57.7657C30.3468 56.9753 30 55.9034 30 54.7857ZM0 29.5C0 28.3823 0.3468 27.3104 0.964107 26.5201C1.58141 25.7297 2.41866 25.2857 3.29167 25.2857H75.7083C76.5813 25.2857 77.4186 25.7297 78.0359 26.5201C78.6532 27.3104 79 28.3823 79 29.5C79 30.6177 78.6532 31.6896 78.0359 32.4799C77.4186 33.2703 76.5813 33.7143 75.7083 33.7143H3.29167C2.41866 33.7143 1.58141 33.2703 0.964107 32.4799C0.3468 31.6896 0 30.6177 0 29.5ZM0 4.21429C0 3.09659 0.3468 2.02467 0.964107 1.23434C1.58141 0.444005 2.41866 0 3.29167 0H75.7083C76.5813 0 77.4186 0.444005 78.0359 1.23434C78.6532 2.02467 79 3.09659 79 4.21429C79 5.33198 78.6532 6.4039 78.0359 7.19424C77.4186 7.98457 76.5813 8.42857 75.7083 8.42857H3.29167C2.41866 8.42857 1.58141 7.98457 0.964107 7.19424C0.3468 6.4039 0 5.33198 0 4.21429Z"
+            fill="black"
+          />
+        </svg>
+      </span>
+    </nav>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <ul class="navbar-nav mr-auto" style="padding-left: 10px">
+        <li class="nav-item active">
+          <a class="nav-link" onclick="closeNav()" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="closeNav()" href="#aboutus">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="closeNav()" href="#OurServices">Our Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="closeNav()" href="#Careers">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="closeNav()" href="#Contactus">Contact us</a>
+        </li>
+      </ul>
+    </div>
+    <div id="home"></div>
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+        ></li>
+        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div
+          class="carousel-item active"
+          style="background: url(/static/images/carousrl_img/tab/image\ 2.jpg)"
+        >
+          <div class="carousel-caption d-md-block">
+            <h5>
+              “If you think it’s expensive to hire a professional, wait until
+              you hire and amateur.”
+            </h5>
+          </div>
+        </div>
+        <div
+          class="carousel-item"
+          style="background: url(/static/images/carousrl_img/tab/Group\ 4.jpg)"
+        >
+          <div class="carousel-caption d-md-block">
+            <h5 style="color: black; -webkit-text-stroke: 1.2px black">
+              “Likability is a soft skill that leads to hard results.”
+            </h5>
+          </div>
+        </div>
+        <div
+          class="carousel-item"
+          style="background: url(/static/images/carousrl_img/tab/image\ 4.jpg)"
+        >
+          <div class="carousel-caption d-md-block">
+            <h5>“To win the marketplace, you must first win the workplace.”</h5>
+          </div>
+        </div>
+        <div
+          class="carousel-item"
+          style="background: url(/static/images/carousrl_img/tab/image\ 5.jpg)"
+        >
+          <div class="carousel-caption d-md-block">
+            <h5>“Focus on the solution not the problem”</h5>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleCaptions"
+        role="button"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleCaptions"
+        role="button"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+
+    <div class="container">
+      <svg
+        class="bg-svg"
+        width="446"
+        height="808"
+        viewBox="0 0 446 808"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M416.31 343.333C455.581 371.411 455.83 429.741 416.8 458.352L-40.6928 793.717C-87.4922 828.023 -153.325 794.929 -153.572 736.972L-156.407 72.4781C-156.654 14.5215 -91.1079 -19.4651 -44.0185 14.2033L416.31 343.333Z"
+          fill="#B0EACD"
+          fill-opacity="0.6"
+        />
+      </svg>
+
+      <h1
+        id="aboutus"
+        style="
+          color: #fd5e53;
+          padding-left: 3%;
+          padding-top: 80px;
+          font-style: normal;
+          font-weight: 600;
+        "
+      >
+        About us
+      </h1>
+      <div class="row" style="padding-top: 40px" data-aos="fade-up">
+        <div class="col-md-4">
+          <img src="/static/images/image 6.png" alt="about_image" class="img-fluid" />
+        </div>
+        <div class="col-md-8 about-paragraph">
+          We are a <mark>world-class service</mark> provider with experience in
+          recruiting, <mark>IT and placement solutions.</mark> While our
+          findings speak for themselves, our theory talks about the future. We
+          know, as our clients and candidates do that intelligence, creativity,
+          ethics and insight are the foundation of the ability to adapt to rapid
+          change and new <mark>performance</mark> paradigms and know precisely
+          how to use them all to the best advantage.
+        </div>
+      </div>
+
+      <div class="row" >
+        <img class="bgrowimg" src="/static/images/Group 14.png" alt="bg-image" />
+        <h1
+          id="OurServices"
+          style="
+            color: #fd5e53;
+            padding-left: 3%;
+            padding-top: 80px;
+            font-style: normal;
+            font-weight: 600;
+          "
+        >
+          Our Services
+        </h1>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="w3-container">
+              <div class="w3-card-4" style="width: 50%" data-aos="fade-up" data-aos-duration="500">
+                 <a href="/RecruitmentServices">
+                <img
+                  src="/static/images/Group 50.jpg"
+                  alt="Servicesimg"
+                  style="width: 100%"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="w3-container">
+              <div class="w3-card-4" style="width: 50%" data-aos="fade-up" data-aos-duration="550">
+                  <a href="/SoftskilltrainingandcareerGuidance">
+                <img
+                  src="/static/images/Group 16.jpg"
+                  alt="Servicesimg"
+                  style="width: 100%"
+                />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="w3-container">
+              <div class="w3-card-4" style="width: 50%" data-aos="fade-up" data-aos-duration="600">
+                  <a href="/HRAdvisoryConsulting">
+
+                <img
+                  src="/static/images/Group 53.jpg"
+                  alt="Servicesimg"
+                  style="width: 100%"
+                />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="w3-container">
+              <div class="w3-card-4" style="width: 50%" data-aos="fade-up" data-aos-duration="650">
+                  <a href="/BusinessSolutions">
+                <img
+                  src="/static/images/Group 54.jpg"
+                  alt="Servicesimg"
+                  style="width: 100%"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" >
+        <h1
+          id="Careers"
+          style="
+            color: #fd5e53;
+            padding-left: 3%;
+            padding-top: 80px;
+            font-style: normal;
+            font-weight: 600;
+          "
+        >
+          Careers
+        </h1>
+
+
+            <form method="POST" enctype="multipart/form-data" style="padding: 2%" data-aos="fade-up" data-aos-duration="550">
+              <div
+              class="row rw-align"
+                            >
+              <div class="col-md-6" style="height: fit-content;">
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input
+                required
+                name="name"
+                  type="text"
+                  class="form-control ip"
+                  id="exampleFormControlInput1"
+                  placeholder="abc"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Mail id</label>
+                <input
+                required
+                name="email"
+                  type="email"
+                  class="form-control ip"
+                  id="exampleFormControlInput1"
+                  placeholder="name@example.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Mobile Number</label>
+                <input
+                required
+                  type="text"
+                  name="ph"
+                  class="form-control ip"
+                  id="exampleFormControlInput1"
+                  placeholder="1234567890"
+                />
+              </div>
+              </form>
+            </div>
+
+
+          <div  class="mobile-align col-md-6" style="height: fit-content;">
+            <div class="form-group ">
+              <label for="exampleFormControlInput1" class="mg-tp">Resume attachment</label>
+              <input
+              required
+              accept=".pdf,.doc"
+              name="resume"
+                style="margin-top: 5px"
+                type="file"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+              />
+            </div>
+
+            <div class="form-group ">
+              <label for="exampleFormControlTextarea1">Message</label>
+              <textarea
+              name="message"
+                style="height: 119px; margin-top: 5px"
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="4"
+                placeholder="Hi there!"
+              ></textarea>
+            </div>
+
+          </div>
+          <button type="submit" class="btn btn-success " style="margin: 10px auto;
+          width: 100px;
+          height: 40px;">Submit</button>
+        </div>
+
+      </div>
+
+      <div class="row" style="padding-bottom: 15px;" >
+
+        <h1
+          id="Contactus"
+          style="
+            color: #fd5e53;
+            padding-left: 3%;
+            padding-top: 80px;
+            font-style: normal;
+            font-weight: 600;
+          "
+        >
+        Contact us
+        </h1>
+
+        <div class="col-md-6 move" style="height: 50vh;" data-aos="fade-up" data-aos-duration="550"><iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1/356%20B,%20Palanisamy%20Nagar,%20%20%20%20%20%20%20%20%20%20%20%20%20Malumichampatti,%20%20%20%20%20%20%20%20%20%20%20%20%20Coimbatore%20641050.+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="600" height="450" frameborder="0" style="border:0;border-radius: 14px;
+          height: 100%;
+          border: 0;
+          width: 100%;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+        <div class="col-md-6 fx" data-aos="fade-up" data-aos-duration="550">
+          <div class="flx"><a href="tel:+919790013001"><svg width="30" height="32" viewBox="0 0 60 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.57769 16.0366L5.57787 16.0371C8.73971 25.2596 13.8839 33.6322 20.628 40.5342L20.6288 40.535C27.3536 47.4567 35.5096 52.735 44.4917 55.979C46.5085 56.707 48.8354 56.105 50.4953 54.4014L54.2543 50.5434L5.57769 16.0366ZM5.57769 16.0366C4.86036 13.9537 5.4568 11.5553 7.11766 9.85067L10.8769 5.99233C11.0844 5.77967 11.3329 5.61534 11.6056 5.50955C11.8782 5.40378 12.1693 5.35879 12.4596 5.37727C12.75 5.39576 13.0336 5.47736 13.2918 5.61712C13.55 5.75684 13.7771 5.95167 13.9577 6.18934L5.57769 16.0366ZM54.0591 47.3517L54.0591 47.3517L45.6799 40.661C45.4329 40.4639 45.1462 40.3276 44.8417 40.2615C44.5372 40.1954 44.2221 40.2012 43.9201 40.2784L35.9676 42.3189C34.8366 42.6096 33.6514 42.5946 32.5278 42.2755C31.4042 41.9564 30.3815 41.3444 29.5587 40.5002L29.5586 40.5001L20.6367 31.3391C20.6367 31.3391 20.6367 31.3391 20.6367 31.3391C19.8143 30.4947 19.2199 29.4471 18.9103 28.2987C18.6007 27.1503 18.5862 25.9395 18.8681 24.7837C18.8681 24.7837 18.8681 24.7836 18.8681 24.7836L20.8562 16.6215L54.0591 47.3517ZM54.0591 47.3517C54.2902 47.5362 54.4812 47.7695 54.6189 48.0367C54.7565 48.304 54.8376 48.5987 54.8562 48.9013C54.8748 49.204 54.8305 49.5071 54.7265 49.7903C54.6226 50.0734 54.4616 50.3298 54.2547 50.5429L54.0591 47.3517ZM8.25048 2.01071C8.76605 1.60864 9.33698 1.28367 9.94638 1.0473C10.8413 0.70017 11.7983 0.552207 12.7537 0.613494C13.7091 0.674781 14.6405 0.943871 15.4859 1.40245C16.3313 1.86101 17.0713 2.49839 17.6571 3.27169L24.1717 11.8713C24.1718 11.8714 24.172 11.8716 24.1721 11.8717C25.4432 13.5439 25.8902 15.7242 25.3892 17.777C25.3892 17.7771 25.3891 17.7772 25.3891 17.7773L23.4009 25.9436L23.4009 25.9438C23.3134 26.3021 23.3179 26.6778 23.4138 27.0337C23.5097 27.3896 23.6934 27.7128 23.9459 27.9723L8.25048 2.01071ZM8.25048 2.01071V1.91763L7.56413 2.62135L3.80468 6.47591L3.80434 6.47626C1.02463 9.33335 -0.209215 13.6133 1.1624 17.6171L1.16246 17.6173C4.55693 27.5125 10.0786 36.4972 17.3188 43.9048C24.5367 51.3348 33.2925 57.0024 42.9371 60.4866L42.9372 60.4866C46.8517 61.8993 51.0318 60.6259 53.8123 57.7721L57.5715 53.9138L8.25048 2.01071ZM32.8755 37.1294L23.9462 27.9726L57.5717 53.9135C60.4336 50.9803 60.1389 46.1347 56.9418 43.5839C56.9418 43.5839 56.9417 43.5839 56.9417 43.5839L48.5626 36.8972C47.756 36.2531 46.8165 35.8052 45.815 35.588C44.8134 35.3709 43.7768 35.3903 42.7838 35.6449L42.7837 35.6449L34.8307 37.6855L34.8305 37.6856C34.4863 37.7741 34.1257 37.7696 33.7836 37.6725C33.4414 37.5754 33.1284 37.3887 32.8755 37.1294ZM13.9579 6.18963L20.4804 14.7933C20.4804 14.7934 20.4805 14.7934 20.4805 14.7935C20.6732 15.048 20.8077 15.3449 20.8729 15.6619C20.9382 15.9788 20.9325 16.3069 20.8563 16.6211L13.9579 6.18963Z" fill="#FD5E53" stroke="#FD5E53" stroke-width="0.8"/>
+            </svg>
+            +919790013001</a>
+            </div>
+          <div class="flx"><a href="mailto:influxglobalsolutions@gmail.com"><svg width="33" height="22" viewBox="0 0 63 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M56.0656 0.350098H6.22951C2.80328 0.350098 0.0311475 3.22682 0.0311475 6.74283L0 45.0992C0 48.6152 2.80328 51.4919 6.22951 51.4919H56.0656C59.4918 51.4919 62.2951 48.6152 62.2951 45.0992V6.74283C62.2951 3.22682 59.4918 0.350098 56.0656 0.350098ZM56.0656 45.0992H6.22951V13.1356L31.1475 29.1174L56.0656 13.1356V45.0992ZM31.1475 22.7246L6.22951 6.74283H56.0656L31.1475 22.7246Z" fill="#FD5E53"/>
+            </svg>influxglobalsolutions@gmail.com</a>
+            </div>
+          <div class="flx"><svg width="38" height="18" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8716 4.49833C13.5156 4.49833 10.2971 5.86641 7.92408 8.30162C5.55105 10.7368 4.2179 14.0397 4.2179 17.4836V43.454H29.5253V17.4836C29.5253 14.0397 28.1921 10.7368 25.8191 8.30162C23.4461 5.86641 20.2276 4.49833 16.8716 4.49833ZM16.8716 0.169922H50.6148C55.0894 0.169922 59.3807 1.99403 62.5448 5.24097C65.7088 8.4879 67.4863 12.8917 67.4863 17.4836V43.454C67.4863 44.602 67.042 45.7029 66.2509 46.5147C65.4599 47.3264 64.3871 47.7824 63.2684 47.7824H4.2179C3.09924 47.7824 2.0264 47.3264 1.23539 46.5147C0.444384 45.7029 0 44.602 0 43.454V17.4836C0 12.8917 1.77754 8.4879 4.94157 5.24097C8.10561 1.99403 12.397 0.169922 16.8716 0.169922ZM28.0321 4.49833C29.8293 6.12138 31.2684 8.11923 32.2532 10.3585C33.238 12.5977 33.746 15.0268 33.7432 17.4836V43.454H63.2684V17.4836C63.2684 14.0397 61.9353 10.7368 59.5623 8.30162C57.1892 5.86641 53.9707 4.49833 50.6148 4.49833H28.0321Z" fill="#FD5E53"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M49.7416 23.9761H37.9611V19.6477H59.0505C59.6099 19.6477 60.1463 19.8757 60.5418 20.2816C60.9373 20.6875 61.1595 21.2379 61.1595 21.8119V26.1403C61.1595 26.7143 60.9373 27.2648 60.5418 27.6706C60.1463 28.0765 59.6099 28.3045 59.0505 28.3045H54.8326C54.5555 28.305 54.281 28.2495 54.0248 28.141C53.7686 28.0326 53.5357 27.8734 53.3395 27.6726L49.7416 23.9761Z" fill="#FD5E53"/>
+            <path d="M21.0895 17.4834C21.0895 19.8727 19.1999 17.4834 16.8716 17.4834C14.5433 17.4834 12.6537 19.8727 12.6537 17.4834C12.6537 16.3355 13.0981 15.2345 13.8891 14.4228C14.6801 13.6111 15.7529 13.155 16.8716 13.155C17.9902 13.155 19.0631 13.6111 19.8541 14.4228C20.6451 15.2345 21.0895 16.3355 21.0895 17.4834Z" fill="#FD5E53"/>
+            </svg>1/356 B, Palanisamy Nagar,
+            Malumichampatti,
+            Coimbatore 641050.
+
+
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="card text-center">
+
+        <div class="card-body">
+          <h5 class="card-title"><img src="/static/images/logo.png" alt="" srcset=""></h5>
+          <div class="socialico">
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg></a>
+           <a> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212h-2.4s.03-6.547 0-7.225h2.4v1.023a5.54 5.54 0 0 0-.016.025h.016v-.025c.32-.493.89-1.193 2.165-1.193 1.58 0 2.764 1.033 2.764 3.252v4.143h-2.4V9.529c0-.972-.348-1.634-1.217-1.634-.664 0-1.059.447-1.233.878-.063.154-.079.37-.079.586v4.035z"/>
+            </svg></a>
+            <a href="https://www.instagram.com/influxglobalsolutions/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg></a>
+          </div>
+
+        </div>
+        <div class="card-footer text-muted">
+          &copyInflux Global Solutions
+        </div>
+      </div>
+    </footer>
+    <script>
+
+AOS.init({
+   once: true
+})
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </body>
+</html>
+
